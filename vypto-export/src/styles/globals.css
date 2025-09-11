@@ -1,0 +1,531 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* VYPTO - CRYPTO VOICE TRACKER - COMPLETE STYLING SYSTEM */
+/* This file contains all styling needed for consistent rendering across environments */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* COMPLETE CSS VARIABLE SYSTEM - DO NOT MODIFY ORDER */
+@layer base {
+  :root {
+    /* Core shadcn/ui variables */
+    --radius: 0.75rem;
+    --background: 0 0% 100%;
+    --foreground: 220 8.9% 9.4%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 8.9% 9.4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 8.9% 9.4%;
+    --primary: 220 14.3% 95.9%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 216.4 12.2% 83.9%;
+    
+    /* Chart colors */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    
+    /* VYPTO BRAND COLORS - CRITICAL FOR CONSISTENT RENDERING */
+    --vypto-blue-50: 239 100% 97%;
+    --vypto-blue-100: 238 100% 94%;
+    --vypto-blue-500: 217 91% 60%;
+    --vypto-blue-600: 221 83% 53%;
+    --vypto-emerald-50: 151 81% 96%;
+    --vypto-emerald-100: 149 80% 90%;
+    --vypto-emerald-500: 160 84% 39%;
+    --vypto-emerald-600: 158 64% 52%;
+    
+    /* COMPLETE NEUTRAL PALETTE */
+    --vypto-neutral-50: 210 20% 98%;
+    --vypto-neutral-100: 220 14.3% 95.9%;
+    --vypto-neutral-200: 220 13% 91%;
+    --vypto-neutral-300: 216 12.2% 83.9%;
+    --vypto-neutral-400: 218 10.6% 64.9%;
+    --vypto-neutral-500: 220 8.9% 46.1%;
+    --vypto-neutral-600: 215 13.8% 34.1%;
+    --vypto-neutral-700: 217 19.1% 26.7%;
+    --vypto-neutral-800: 215 27.9% 16.9%;
+    --vypto-neutral-900: 220 8.9% 9.4%;
+    
+    /* ACCENT COLORS */
+    --vypto-red-50: 0 85.7% 97.3%;
+    --vypto-red-500: 0 84.2% 60.2%;
+    --vypto-amber-50: 48 100% 96.1%;
+    --vypto-amber-400: 43 96.4% 56.3%;
+  }
+
+  /* DARK THEME VARIABLES */
+  .dark {
+    --radius: 0.75rem;
+    --background: 220 8.9% 9.4%;
+    --foreground: 210 20% 98%;
+    --card: 220 13% 14.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 220 13% 14.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+    
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+/* UNIVERSAL STYLES - APPLIES TO ALL ELEMENTS */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* VYPTO BRAND GRADIENTS - EXACT REPRODUCTION */
+  .vypto-gradient-bg-main {
+    background: linear-gradient(135deg, 
+      hsl(var(--vypto-neutral-50)) 0%, 
+      hsl(var(--vypto-blue-50)) 30%, 
+      hsl(var(--vypto-amber-50)) 100%
+    );
+    min-height: 100vh;
+  }
+
+  .vypto-gradient-logo {
+    background: linear-gradient(135deg, 
+      hsl(var(--vypto-blue-500)) 0%, 
+      hsl(var(--vypto-emerald-500)) 100%
+    );
+    border-radius: 1rem;
+    box-shadow: 0 8px 25px -5px hsla(var(--vypto-blue-500), 0.25);
+  }
+
+  .vypto-gradient-text {
+    background: linear-gradient(135deg, 
+      hsl(var(--vypto-blue-600)) 0%, 
+      hsl(var(--vypto-emerald-600)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* GLASSMORPHISM CARD SYSTEM */
+  .vypto-card-bg {
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid hsla(var(--vypto-neutral-200), 0.6);
+    border-radius: 1.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .dark .vypto-card-bg {
+    background: hsla(var(--vypto-neutral-800), 0.8);
+    border: 1px solid hsla(var(--vypto-neutral-700), 0.6);
+  }
+
+  .vypto-card-hover {
+    border-color: hsla(var(--vypto-neutral-300), 0.8);
+    box-shadow: 0 25px 50px -12px hsla(var(--vypto-neutral-900), 0.05);
+    transform: translateY(-4px);
+  }
+
+  .dark .vypto-card-hover {
+    border-color: hsla(var(--vypto-neutral-600), 0.8);
+  }
+
+  /* INTERACTIVE BUTTON SYSTEM */
+  .vypto-btn-primary {
+    background: linear-gradient(135deg, 
+      hsl(var(--vypto-blue-500)) 0%, 
+      hsl(var(--vypto-emerald-500)) 100%
+    );
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .vypto-btn-primary:hover {
+    background: linear-gradient(135deg, 
+      hsl(var(--vypto-blue-600)) 0%, 
+      hsl(var(--vypto-emerald-600)) 100%
+    );
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px -3px hsla(var(--vypto-blue-500), 0.25);
+  }
+
+  .vypto-btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* STATUS INDICATOR SYSTEM */
+  .vypto-status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: hsla(0, 0%, 100%, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+    border: 1px solid hsla(var(--vypto-neutral-200), 0.6);
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: 0 1px 3px 0 hsla(var(--vypto-neutral-900), 0.1);
+  }
+
+  .dark .vypto-status-indicator {
+    background: hsla(var(--vypto-neutral-800), 0.6);
+    border: 1px solid hsla(var(--vypto-neutral-700), 0.6);
+  }
+
+  /* TAB NAVIGATION SYSTEM */
+  .vypto-tab-list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    background: hsla(0, 0%, 100%, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid hsla(var(--vypto-neutral-200), 0.6);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-shadow: 0 1px 3px 0 hsla(var(--vypto-neutral-900), 0.1);
+  }
+
+  .dark .vypto-tab-list {
+    background: hsla(var(--vypto-neutral-800), 0.6);
+    border: 1px solid hsla(var(--vypto-neutral-700), 0.6);
+  }
+
+  .vypto-tab-trigger {
+    border-radius: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  .vypto-tab-trigger[data-state="active"] {
+    background: white;
+    box-shadow: 0 1px 3px 0 hsla(var(--vypto-neutral-900), 0.1);
+    color: hsl(var(--vypto-neutral-900));
+  }
+
+  .dark .vypto-tab-trigger[data-state="active"] {
+    background: hsl(var(--vypto-neutral-700));
+    color: white;
+  }
+
+  /* ANIMATION SYSTEM */
+  .vypto-float {
+    animation: vypto-float 6s ease-in-out infinite;
+  }
+
+  @keyframes vypto-float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    33% { 
+      transform: translateY(-10px) rotate(1deg); 
+    }
+    66% { 
+      transform: translateY(5px) rotate(-1deg); 
+    }
+  }
+
+  .vypto-pulse-slow {
+    animation: vypto-pulse-slow 2s ease-in-out infinite;
+  }
+
+  @keyframes vypto-pulse-slow {
+    0%, 100% { 
+      opacity: 1; 
+    }
+    50% { 
+      opacity: 0.7; 
+    }
+  }
+
+  /* COIN CARD SYSTEM - EXACT STYLING */
+  .vypto-coin-card {
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid hsla(var(--vypto-neutral-200), 0.6);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dark .vypto-coin-card {
+    background: hsla(var(--vypto-neutral-800), 0.8);
+    border: 1px solid hsla(var(--vypto-neutral-700), 0.6);
+  }
+
+  .vypto-coin-card:hover {
+    border-color: hsla(var(--vypto-neutral-300), 0.8);
+    box-shadow: 0 25px 50px -12px hsla(var(--vypto-neutral-900), 0.05);
+    transform: translateY(-4px);
+  }
+
+  .dark .vypto-coin-card:hover {
+    border-color: hsla(var(--vypto-neutral-600), 0.8);
+  }
+
+  /* TYPOGRAPHY SYSTEM */
+  .vypto-heading {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .vypto-heading-xl {
+    font-size: 2.25rem;
+    line-height: 1.1;
+  }
+
+  .vypto-heading-lg {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  .vypto-heading-md {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .vypto-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: hsl(var(--vypto-neutral-600));
+  }
+
+  .vypto-body-sm {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: hsl(var(--vypto-neutral-500));
+  }
+
+  .vypto-body-xs {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: hsl(var(--vypto-neutral-400));
+  }
+
+  /* RESPONSIVE UTILITIES */
+  .vypto-container {
+    width: 100%;
+    max-width: 128rem; /* 2048px */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .vypto-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .vypto-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* GRID SYSTEM */
+  .vypto-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .vypto-grid {
+      gap: 1.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .vypto-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  /* LOADING STATES */
+  .vypto-skeleton {
+    background: linear-gradient(90deg, 
+      hsla(var(--vypto-neutral-200), 0.4) 0%, 
+      hsla(var(--vypto-neutral-200), 0.8) 50%, 
+      hsla(var(--vypto-neutral-200), 0.4) 100%
+    );
+    background-size: 200% 100%;
+    animation: vypto-skeleton 1.5s ease-in-out infinite;
+    border-radius: 0.5rem;
+  }
+
+  @keyframes vypto-skeleton {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* ACCESSIBILITY IMPROVEMENTS */
+  .vypto-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* FOCUS STATES */
+  .vypto-focus:focus-visible {
+    outline: 2px solid hsl(var(--vypto-blue-500));
+    outline-offset: 2px;
+  }
+
+  /* SCROLLBAR STYLING */
+  .vypto-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .vypto-scrollbar::-webkit-scrollbar-track {
+    background: hsla(var(--vypto-neutral-100), 0.5);
+    border-radius: 4px;
+  }
+
+  .vypto-scrollbar::-webkit-scrollbar-thumb {
+    background: hsla(var(--vypto-neutral-300), 0.8);
+    border-radius: 4px;
+  }
+
+  .vypto-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsla(var(--vypto-neutral-400), 0.8);
+  }
+
+  /* PRINT STYLES */
+  @media print {
+    .vypto-gradient-bg-main {
+      background: white !important;
+    }
+    
+    .vypto-card-bg {
+      background: white !important;
+      border: 1px solid black !important;
+    }
+  }
+}
+
+/* COMPONENT-SPECIFIC OVERRIDES */
+@layer components {
+  /* Ensure all shadcn/ui components use consistent styling */
+  .vypto-override * {
+    border-color: hsl(var(--border));
+    color: inherit;
+  }
+  
+  /* Button component overrides */
+  button[class*="vypto"] {
+    cursor: pointer;
+    outline: none;
+  }
+  
+  button[class*="vypto"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  /* Input component overrides */
+  input[class*="vypto"],
+  select[class*="vypto"],
+  textarea[class*="vypto"] {
+    border-color: hsl(var(--vypto-neutral-200));
+    background-color: white;
+  }
+  
+  input[class*="vypto"]:focus,
+  select[class*="vypto"]:focus,
+  textarea[class*="vypto"]:focus {
+    border-color: hsl(var(--vypto-blue-500));
+    box-shadow: 0 0 0 3px hsla(var(--vypto-blue-500), 0.1);
+  }
+}
+
+/* DARK MODE OVERRIDES */
+@media (prefers-color-scheme: dark) {
+  .vypto-auto-dark {
+    /* Automatic dark mode styles if needed */
+  }
+}
